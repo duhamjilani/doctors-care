@@ -1,0 +1,121 @@
+.Big-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:15px;
+}
+
+.Big-box {
+    width: 95vw;
+    height: 80vh;
+    border: 1px solid #52B9C4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    
+   
+}
+.Big-box h4{
+    font-size:20px;
+}
+
+.Boxes {
+    display: flex;
+    justify-content: center; /* Center the feedback */
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    overflow: hidden; 
+}
+
+.BOX {
+    width: 20vw;
+    height: 30vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    gap:15px;
+}
+.BOX h3{
+    color:#0D8C60;
+    font-weight:600;
+}
+
+
+.btn {
+    height: 6vh;
+    width: 10vw;
+    padding: 10px;
+}
+.btns{
+    display: flex;
+    gap:20px;
+}
+
+@media (max-width: 768px) {
+   .Boxes{
+    flex-direction: column;
+    gap:15px;
+   }
+   .Big-box h4{
+    font-size: 15px;
+   }
+  .Big-box{
+    gap:15px;
+  }
+  
+  .BOX h3{
+    font-size: 15px;
+}
+.BOX{
+    width: 30vw;
+}
+.BOX p{
+    font-size: 15px;
+}
+.btn {
+    height: 6vh;
+    width: 10vw;
+    padding: 5px;
+}
+.Big-container h1{
+    font-size: 40px;
+}
+}
+
+@media (max-width: 480px) {
+    .Boxes{
+        flex-direction: column;
+        gap:15px;
+       }
+       .Big-box h4{
+        font-size: 15px;
+       }
+      .Big-box{
+       
+        gap:15px;
+      }
+      .BOX h3{
+        font-size: 10px;
+    }
+    .BOX p{
+        font-size: 10px;
+    }
+    .btn {
+        height: 6vh;
+        width: 12vw;
+        padding: 5px;
+        font-size: 10px;
+    }
+    .Big-container h1{
+        font-size: 30px;
+    }
+   
+    }

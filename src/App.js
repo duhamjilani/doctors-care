@@ -1,24 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
-
+import "./App.css";
+import Footer from "./Components/Footer/Footer";
+import Apply from "./Components/MainPage/Apply";
+import Classification from "./Components/MainPage/Classification";
+import ContactUs from "./Components/MainPage/ContactUs";
+import Dataflow from "./Components/MainPage/Dataflow";
+import Hero from "./Components/MainPage/Hero";
+import Reviews from "./Components/MainPage/Reviews";
+import WhyUs from "./Components/MainPage/WhyUs";
+import Navbar from "./Components/NavBar/Navbar";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  BrowserRouter,
+} from "react-router-dom";
+import SmoothScroll from "smooth-scroll";
+export const scroll = new SmoothScroll('a[href*="#"]', {
+  speed: 1000,
+  speedAsDuration: true,
+});
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     
+       
+     
+      <Router>
+      <Navbar />
+        <Routes>
+          <Route path="/" element={<Hero />} />
+          <Route path="/apply/dataflow" element={<Dataflow />} />
+          <Route path="/apply/classification" element={<Classification />} />
+        </Routes>
+        <Footer />
+      </Router>
+
+      {/* <Router>
+     
+        <Routes>
+          <Route path="apply" element={<Apply />} />
+          <Route path="/dataflow" element={<Dataflow />} />
+          <Route path="/classification" element={<Classification />} />
+        </Routes>
+      
+      </Router> */}
+     
+     
+    </>
   );
 }
 

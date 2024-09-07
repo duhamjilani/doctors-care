@@ -1,0 +1,226 @@
+.BIG-CONTAINER {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.Big-box2 {
+    width: 100%;
+    max-width: 800px;
+    border: 1px solid #52B9C4;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.Big-box2 .field {
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.Big-box2 .field label {
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.Big-box2 .field input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.file {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.upload {
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid rgb(158, 155, 155);
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    color: #8D8D8D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* Custom file upload button */
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    /* background-color: #52B9C4; */
+    color:#8D8D8D;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+}
+
+.custom-file-upload input[type="file"] {
+    display: none;
+}
+
+/* Styling for radio buttons */
+.radio_buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.radio_buttons label {
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="radio"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #52B9C4;
+    border-radius: 50%;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+input[type="radio"]:checked::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 12px;
+    height: 12px;
+    background-color: #52B9C4;
+    border-radius: 50%;
+}
+
+.custom-button.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #52B9C4;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+.price{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:20px
+}
+.price input{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 4px;
+}
+.contain {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .contain h3 {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .bigOne {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .box3 {
+    flex: 1 1 calc(50% - 20px);
+    min-width: 150px;
+    background-color: rgba(39, 144, 195, 0.68);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  
+  .box3.green {
+    background-color: rgba(13, 140, 96, 0.39);
+  }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .Big-box2 {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .Big-box2 .field,
+    .file,
+    .upload {
+        width: 100%;
+    }
+
+    .custom-file-upload {
+        font-size: 14px;
+    }
+
+    .radio_buttons {
+        flex-direction: column;
+    }
+
+    .radio_buttons label {
+        font-size: 14px;
+    }
+
+    .custom-button.btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Big-box2 {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .custom-file-upload {
+        font-size: 12px;
+    }
+
+    .custom-button.btn {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+

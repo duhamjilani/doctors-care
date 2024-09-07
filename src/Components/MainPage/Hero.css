@@ -1,0 +1,39 @@
+
+.layer{
+    background-color: rgba(240, 244, 247, 0.69);
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    gap:20px;
+}
+.layer h1{
+    font-size: 50px;
+    font-weight: 600;
+}
+.layer p{
+    text-align: center;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .layer h1 {
+        font-size: 36px;
+    }
+
+    .layer p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .layer h1 {
+        font-size: 28px;
+    }
+
+    .layer p {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,86 @@
+.big-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    width: 100%;
+}
+.big-container h1{
+    font-size: 40px;
+    font-weight: 600;
+}
+.boxes{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+   width: 100%;
+    margin-top: 30px;
+   
+    gap:20px;
+    
+
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #52B9C4;
+    height: 30vh;
+    width: 20vw;
+    color:white;
+    border-radius: 50px 20px;
+    transition: transform 0.3s; 
+}
+
+.box:hover {
+    transform: scale(1.05); 
+}
+
+.icon{
+  
+    font-size: 80px;
+}
+@media (max-width: 768px) {
+    .big-container {
+        height: auto; /* Let content define the height on smaller screens */
+    }
+
+    .big-container h1 {
+        font-size: 40px; /* Smaller heading size for mobile */
+    }
+
+    .boxes {
+       
+      
+        flex-direction: column;
+    }
+
+    .box {
+        width: 40vw; /* Increase box width on small screens */
+        height: 25vh; /* Decrease height for smaller screens */
+    }
+
+    .icon {
+        font-size: 60px; /* Smaller icon size for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .big-container h1 {
+        font-size: 40px; /* Further reduce heading size for very small screens */
+    }
+    .boxes {
+        flex-direction: column;
+    }
+
+    .box {
+        width: 80vw; /* Full width on very small screens */
+        height: 20vh; /* Reduce height for mobile */
+    }
+
+    .icon {
+        font-size: 50px; /* Smaller icon size */
+    }
+}

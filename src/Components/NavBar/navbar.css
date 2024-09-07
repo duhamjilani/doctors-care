@@ -1,0 +1,137 @@
+.Navbar {
+    width: 100%;
+   
+    background-color: rgba(13, 140, 96, 0.39);
+    height: 9vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  .logo1 {
+    height: 9vh;
+    width: 6vw;
+  }
+  
+  .center {
+    flex: 2;
+    font-weight: 600;
+  }
+  
+  .center ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  ul li a{
+    text-decoration: none;
+    color:#133240;
+  }
+  ul li a:hover{
+   
+    color:white;
+  }
+
+
+  .center li {
+    margin: 0 15px;
+    position: relative;
+   
+  }
+  
+  .dropdown {
+    cursor: pointer;
+  }
+  
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  .dropdown-menu li {
+    padding: 10px 20px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  
+  .dropdown-menu li:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  /* Responsive Styles */
+  .menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
+  @media (max-width: 768px) {
+    .center ul {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+       background-color: rgba(13, 140, 96, 0.39);
+       margin-top: 80px;
+    }
+  
+    .center.active ul {
+      display: flex;
+    }
+  
+    .center li {
+      margin: 15px 0;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  
+    .dropdown {
+      text-align: center;
+    }
+  
+    .dropdown-menu {
+      position: static;
+      box-shadow: none;
+      width: 100%;
+    }
+  
+    .dropdown-menu li {
+      padding: 10px;
+    }
+  
+    .dropdown-menu {
+      display: none; /* Hidden by default */
+    }
+  
+    .dropdown:hover .dropdown-menu {
+      display: block; /* Show on hover */
+    }
+  }
+  
+  @media (min-width: 769px) {
+    .center ul {
+      display: flex;
+    }
+  
+    .menu-icon {
+      display: none;
+    }
+  }
+  

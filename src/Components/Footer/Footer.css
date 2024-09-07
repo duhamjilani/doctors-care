@@ -1,0 +1,20 @@
+.footer{
+    width: 100%;
+   
+    background-color: rgba(13, 140, 96, 0.39);
+    height: 9vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 20px;
+  }
+  .contactus{
+    display:flex;
+    justify-content: center;
+align-items: center;
+    gap:20px;
+  }
+ 

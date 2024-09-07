@@ -4,6 +4,7 @@ import { MdCloudUpload } from "react-icons/md";
 import samplePDF from "../../../src/duha_cv.pdf";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { useTranslation } from 'react-i18next';
 
 const Dataflow = () => {
   const [phone, setPhone] = useState("");
@@ -15,7 +16,7 @@ const Dataflow = () => {
   const [physician, setPhysician] = useState("");
   const [urgently, seturgently] = useState("");
   const [total, setTotal] = useState(0);
-
+  const { t } = useTranslation();
   const phoneRegex = /^00-966-\d{3}-\d{3}-\d{4}$/;
 
   const handlePhoneChange = (e) => {
@@ -78,9 +79,7 @@ const Dataflow = () => {
         confirmButton: "custom-button btn",
       },
     });
-    // refreshReviews();
-
-    // Additional form submission logic here
+   
   };
 
   const handleTogglePDF = () => {
@@ -89,11 +88,11 @@ const Dataflow = () => {
 
   return (
     <div className="BIG-CONTAINER">
-      <h1>Data Flow</h1>
+      <h1>{t('title')}</h1>
       <div className="Big-box2">
         <form onSubmit={handleSubmit}>
           <div className="field">
-            <label htmlFor="firstname">First Name</label>
+            <label htmlFor="firstname">{t('firstName')}</label>
             <input
               type="text"
               placeholder="FIRST NAME"
@@ -106,7 +105,7 @@ const Dataflow = () => {
           </div>
 
           <div className="field">
-            <label htmlFor="lastname">Last Name</label>
+            <label htmlFor="lastname">{t('lastName')}</label>
             <input
               type="text"
               placeholder="LAST NAME"
@@ -119,7 +118,7 @@ const Dataflow = () => {
           </div>
 
           <div className="field">
-            <label htmlFor="phone">Phone Number</label>
+            <label htmlFor="phone">{t('phoneNumber')}</label>
             <input
               type="text"
               placeholder="00-966-000-000-0000"
@@ -136,7 +135,7 @@ const Dataflow = () => {
             <div className="upload">
               <MdCloudUpload />
               <label className="custom-file-upload">
-                Choose File
+              {t('chooseFile')}
                 <input type="file" name="file1" onChange={handleFile} />
               </label>
             </div>
@@ -145,12 +144,12 @@ const Dataflow = () => {
               className="custom-button btn"
               onClick={handleTogglePDF}
             >
-              {showPDF ? "Hide Example" : "Show Example"}
+             {t('showExample')}
             </button>
           </div>
 
           <div className="radio_buttons">
-            <label htmlFor="physician">PHYSICIAN</label>
+            <label htmlFor="physician">{t('physician')}</label>
             <input
               type="radio"
               value="yes"
@@ -158,7 +157,7 @@ const Dataflow = () => {
               id="physician-yes"
               onChange={handlePhysicianChange}
             />
-            <label htmlFor="yes">YES</label>
+            <label htmlFor="yes">{t('yes')}</label>
             <input
               type="radio"
               value="no"
@@ -166,10 +165,10 @@ const Dataflow = () => {
               id="physician-no"
               onChange={handlePhysicianChange}
             />
-            <label htmlFor="no">NO</label>
+            <label htmlFor="no">{t('no')}</label>
           </div>
           <div className="radio_buttons">
-            <label htmlFor="urgently">URGENTLY</label>
+            <label htmlFor="urgently">{t('urgently')}</label>
             <input
               type="radio"
               value="yes"
@@ -177,7 +176,7 @@ const Dataflow = () => {
               id="urgently-yes"
               onChange={handleUrgentlyChange}
             />
-            <label htmlFor="yes">YES</label>
+            <label htmlFor="yes">{t('yes')}</label>
             <input
               type="radio"
               value="no"
@@ -185,31 +184,31 @@ const Dataflow = () => {
               id="urgently-no"
               onChange={handleUrgentlyChange}
             />
-            <label htmlFor="no">NO</label>
+            <label htmlFor="no">{t('no')}</label>
           </div>
           <div className="price">
-            <label htmlFor="total">TOTAL</label>
+            <label htmlFor="total">{t('total')}</label>
             <input type="text" name="total" disabled value={total} />
           </div>
           <button className="custom-button btn" type="submit">
-            Submit
+          {t('submit')}
           </button>
         </form>
       </div>
       <div className="contain">
-        <h3>FILE MUST CONTAIN</h3>
+        <h3>{t('fileMustContain')}</h3>
         <div className="bigOne">
           <div className="box3 green">
-            <h4>Passport</h4>
+            <h4>{t('passport')}</h4>
           </div>
           <div className="box3">
-            <h4>Degree</h4>
+            <h4>{t('degree')}</h4>
           </div>
           <div className="box3">
-            <h4>Professional practice certificate</h4>
+            <h4>{t('professionalPractice')}</h4>
           </div>
           <div className="box3 green">
-            <h4>Mark sheet</h4>
+            <h4>{t('markSheet')}</h4>
           </div>
         </div>
       </div>

@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import './navbar.css';
 import logo from '../../Pictures/logo.png';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
+  const { i18n } = useTranslation()
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -15,11 +17,13 @@ const Navbar = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
-  const handleLanguageChange = (language) => {
-    console.log(`Language selected: ${language}`);
-    // Implement language change logic here
-    setIsDropdownOpen(false); // Close the dropdown after selection
-  };
+  
+    const handleLanguageChange = (language) => {
+      i18n.changeLanguage(language.toLowerCase()); // Change the language
+      setIsDropdownOpen(false); // Close the dropdown after selection
+    };
+    
+   
 
   return (
     <div>
@@ -29,17 +33,17 @@ const Navbar = () => {
         </div>
         <div className={`center ${isMenuOpen ? 'active' : ''}`}>
           <ul>
-            <li> <Link to='/' > HOME</Link></li>
-            <li> <a href='/#apply'> APPLY</a></li>
-            <li> <a  href='/#whyus'> WHY US</a></li>
-            <li> <a href='/#reviews'>REVIEWS</a></li>
-            <li> <a href='/#contactus'>CONTACT US</a></li>
+            <li> <Link to='/' > {i18n.t('HOME')}</Link></li>
+            <li> <a href='/#apply'> {i18n.t('APPLY')}</a></li>
+            <li> <a  href='/#whyus'> {i18n.t('WHY US')}</a></li>
+            <li> <a href='/#reviews'>{i18n.t('REVIEWS')}</a></li>
+            <li> <a href='/#contactus'>{i18n.t('CONTACT US')}</a></li>
             <li className='dropdown' onClick={toggleDropdown}>
-              LANGUAGE ▼
+            {i18n.t('LANGUAGE')} ▼
               {isDropdownOpen && (
                 <ul className='dropdown-menu'>
-                  <li onClick={() => handleLanguageChange('English')}>English</li>
-                  <li onClick={() => handleLanguageChange('Arabic')}>Arabic</li>
+                  <li onClick={() => handleLanguageChange('en')}>English</li>
+                  <li onClick={() => handleLanguageChange('ar')}>Arabic</li>
                 </ul>
               )}
             </li>

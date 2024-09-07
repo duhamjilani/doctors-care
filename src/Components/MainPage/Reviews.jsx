@@ -2,10 +2,12 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Reviews.css';
 import WriteFeedback from './WriteFeedback';
+import { useTranslation } from 'react-i18next';
 
 const Reviews = () => {
   const [items, setItems] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const {t}=useTranslation();
 
   // useEffect(() => {
   //   axios.get("http://localhost:5004/feedbacks")
@@ -44,10 +46,10 @@ const Reviews = () => {
 
   return (
     <div className='Big-container' id='reviews'>
-      <h1>Our Customer Feedback</h1>
+      <h1>{t("Our Customer Feedback")}</h1>
       <div className='Big-box'>
       
-        <h4>Don’t take our word for it. Trust our customers</h4>
+        <h4>{t("review_sentence")}</h4>
        
         
         <div className='Boxes'>
@@ -59,8 +61,8 @@ const Reviews = () => {
           ))}
         </div>
         <div className='btns'>
-        <button className='custom-button btn' onClick={handlePrev}>Previous</button>
-        <button className='custom-button btn' onClick={handleNext}>Next</button></div>
+        <button className='custom-button btn' onClick={handlePrev}>{t('Previous')}</button>
+        <button className='custom-button btn' onClick={handleNext}>{t('Next')}</button></div>
       </div>
       {/* <WriteFeedback refreshReviews={fetchFeedbacks} /> */}
       

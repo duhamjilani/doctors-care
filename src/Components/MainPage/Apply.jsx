@@ -2,11 +2,13 @@ import React from 'react';
 import './Apply.css';
 import { Link } from 'react-router-dom';
 import file from '../../Pictures/file.jpg';
+import { useTranslation } from 'react-i18next';
 
 const Apply = () => {
+  const {t}=useTranslation();
   return (
     <div className='big-container1' id='apply'>
-      <h1>CHOOSE YOUR APPLICATION</h1>
+      <h1>{t('CHOOSE YOUR APPLICATION')}</h1>
       <div className='boxes'>
  
         <div
@@ -23,7 +25,7 @@ const Apply = () => {
           <div className='layer1'>
             <div className="button-container">
               <Link to='/apply/Dataflow' className="custom-button">
-                DATA FLOW
+              {t('DATA FLOW')}
               </Link>
             </div>
           </div>
@@ -43,7 +45,7 @@ const Apply = () => {
           <div className='layer1'>
             <div className="button-container">
               <Link to='/apply/Classification' className="custom-button">
-                DATA FLOW & CLASSIFICATION
+              {t('DATA FLOW & CLASSIFICATION')}
               </Link>
             </div>
           </div>

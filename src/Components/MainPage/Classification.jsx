@@ -4,6 +4,7 @@ import { MdCloudUpload } from "react-icons/md";
 import samplePDF from "../../../src/duha_cv.pdf";
 import axios from "axios";
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 import Swal from "sweetalert2";
 const Classification = () => {
@@ -17,6 +18,7 @@ const Classification = () => {
   const [urgently, seturgently] = useState("");
   const [total, setTotal] = useState(0);
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
 
   const phoneRegex = /^00-966-\d{3}-\d{3}-\d{4}$/;
@@ -83,7 +85,7 @@ const Classification = () => {
     });
     // refreshReviews();
 
-    // Additional form submission logic here
+    navigate('/apply/dataflow/paypal', { state: { total:total } });
   };
 
   const handleTogglePDF = () => {

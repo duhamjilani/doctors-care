@@ -5,6 +5,7 @@ import samplePDF from "../../../src/duha_cv.pdf";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 
 const Dataflow = () => {
   const [phone, setPhone] = useState("");
@@ -18,6 +19,7 @@ const Dataflow = () => {
   const [total, setTotal] = useState(0);
   const { t } = useTranslation();
   const phoneRegex = /^00-966-\d{3}-\d{3}-\d{4}$/;
+  const navigate = useNavigate();
 
   const handlePhoneChange = (e) => {
     setPhone(e.target.value);
@@ -79,7 +81,11 @@ const Dataflow = () => {
         confirmButton: "custom-button btn",
       },
     });
-   
+    // navigate('/apply/dataflow/paypal', { state: { total } });
+    navigate('/apply/dataflow/paypal', { state: { total:total } });
+
+
+
   };
 
   const handleTogglePDF = () => {

@@ -7,11 +7,13 @@ import { useTranslation } from 'react-i18next';
 
 
 
+
 const WriteFeedback = ({refreshReviews}) => {
   const [firstName, setfirstName] = useState("");
   const [lastName, setlastName] = useState("");
   const [feedback, setfeedback] = useState("");
   const{t}=useTranslation();
+  
  
  
   let FormSubmit=(e)=>{
@@ -34,7 +36,7 @@ const WriteFeedback = ({refreshReviews}) => {
       }
     });
     // refreshReviews();
-    
+   
   }
   return (
     <div>

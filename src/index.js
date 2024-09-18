@@ -5,15 +5,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n';
+<script src="https://sandbox.paypal.com/sdk/js?client-id=ARSPdZ50w0zsSLwyrXkKFi4W5HPJbn3EzWzrqZ7FhrIDucoHrH8VSylNNq6gxJTxrjgukGfDC-TvpPCC&currency=USD"></script>
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  //  <React.StrictMode>
      <I18nextProvider i18n={i18n}>
      <App />
      </I18nextProvider>
    
-  </React.StrictMode>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

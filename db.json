@@ -1,101 +1,33 @@
 {
   "feedbacks": [
+   
     {
-      "id": "1",
-      "firstName": "Alice",
-      "lastName": "Johnson",
-      "feedback": "Great service! I really appreciated the prompt response and helpful support."
+      "id": "c77452",
+      "fullname": "ahmad",
+     
+      "feedback": "amazing"
     },
     {
-      "id": "2",
-      "firstName": "Bob",
-      "lastName": "Smith",
-      "feedback": "The platform is user-friendly, but I faced a few issues while navigating the settings page."
+      "id": "c788",
+      "fullname": "duha",
+      "feedback":"[kbomuh9v90g=.-f/-=vb86yb,i=v4bm5vrp=u7hgtrijhgtrltgol]y,bn6ul760-un6.i0j.jbyk"
     },
     {
-      "id": "3",
-      "firstName": "Catherine",
-      "lastName": "Lee",
-      "feedback": "Fantastic experience! The team was very supportive and the documentation was very clear."
-    },
-    {
-      "id": "4",
-      "firstName": "David",
-      "lastName": "Brown",
-      "feedback": "The response time could be improved, but overall a decent service."
-    },
-    {
-      "id": "5",
-      "firstName": "Emily",
-      "lastName": "Wilson",
-      "feedback": "Excellent! The application works smoothly and all my queries were resolved on time."
-    },
-    {
-      "id": "dac2",
-      "firstName": "duha",
-      "lastName": "Jilani",
-      "feedback": "sss"
+      "id": "c745",
+      "fullname": "omar",
+     
+      "feedback": "9bh-ni=hy.gtrljuhygtrkmbhk,y09nj-9uypgtr,bmjihpnyhbj[ytkgvwkimtuopti,[btrknhnyi-0umnyibe-\nbht-f=o-rekti90rfoecrgvtro-[lihytgbhl0=it.gki yto0=g vthoi;0vgpdkiocvgbitmhmuhihtnykihmhbbtov[.psrog"
     },
     {
       "id": "c744",
-      "firstName": "ddd",
-      "lastName": "ppp",
-      "feedback": "bnghmujmnhmhj,mnhngh"
-    },
-    {
-      "id": "0109",
-      "firstName": ";;",
-      "lastName": ";;;;;",
-      "feedback": "ssss"
-    },
-    {
-      "id": "d726",
-      "firstName": "",
-      "lastName": "",
-      "feedback": ""
-    },
-    {
-      "id": "94b6",
-      "firstName": "",
-      "lastName": "",
-      "feedback": ""
-    },
-    {
-      "id": "3846",
-      "firstName": "",
-      "lastName": "",
-      "feedback": ""
-    },
-    {
-      "id": "37b6",
-      "firstName": "",
-      "lastName": "",
-      "feedback": ""
-    },
-    {
-      "id": "acd1",
-      "firstName": "",
-      "lastName": "",
-      "feedback": ""
-    },
-    {
-      "id": "dbeb",
-      "firstName": "",
-      "lastName": "",
-      "feedback": ""
-    },
-    {
-      "id": "2573",
-      "firstName": "duha",
-      "lastName": "jilani",
-      "phone": "00-966-000-000-0000",
-      "file": {}
+      "fullname": "sara",
+     
+      "feedback": "beautiful lorem lorem lorem lorem lorem lorem lorem g]plbkgop]kp]"
     }
+   
   ],
   "application": [
-    {
-      "id": "0c15"
-    },
+   
     {
       "id": "cc4f",
       "firstName": "duha",
@@ -104,139 +36,25 @@
       "file": {}
     },
     {
-      "id": "ccee",
+      "id": "d344e",
       "firstName": "duha",
       "lastName": "jilani",
-      "phone": "00-966-000-000-0000",
-      "file": {},
-      "physician": "yes"
-    },
-    {
-      "id": "1087",
-      "firstName": "duha",
-      "lastName": "jilani",
-      "phone": "00-966-000-000-0000",
-      "file": {},
+      "phone": "962799457115",
+      "file": "",
       "physician": "no",
-      "urgently": "yes"
-    },
-    {
-      "id": "23e3",
-      "firstName": "duha",
-      "lastName": "jilani",
-      "phone": "00-966-000-000-0000",
-      "file": {},
-      "physician": "no",
-      "urgently": "yes"
-    },
-    {
-      "id": "add4",
-      "firstName": "duha",
-      "lastName": "jilani",
-      "phone": "00-966-000-000-0000",
-      "file": {},
-      "physician": "yes",
-      "urgently": "no"
-    },
-    {
-      "id": "3351",
-      "firstName": "duha",
-      "lastName": "jilani",
-      "phone": "00-966-000-000-0000",
-      "file": {},
-      "physician": "yes",
       "urgently": "yes",
-      "total": 150
+      "total": 100
     },
     {
-      "id": "8a7e",
-      "firstName": "duha",
-      "lastName": "jilani",
-      "phone": "00-966-000-000-0000",
+      "id": "d3b5",
+      "fullName": "duha mohannad jilani",
+      "EMAIL": "duha.m.jilani@gmail.com",
+      "phone": "0799547115",
       "file": "",
       "physician": "yes",
-      "urgently": "yes",
-      "total": 150
-    },
-    {
-      "id": "60de",
-      "firstName": "duha",
-      "lastName": "jilani",
-      "phone": "00-966-000-000-0000",
-      "file": "",
-      "physician": "yes",
-      "urgently": "yes",
-      "total": 150
-    },
-    {
-      "id": "2448",
-      "firstName": "duha",
-      "lastName": "jilani",
-      "phone": "00-966-000-000-0000",
-      "file": "",
-      "physician": "yes",
-      "urgently": "yes",
-      "total": 150
-    },
-    {
-      "id": "3cf9",
-      "firstName": "duha",
-      "lastName": "jilani",
-      "phone": "00-966-000-000-0000",
-      "file": "",
-      "physician": "yes",
-      "urgently": "yes",
-      "total": 150
-    },
-    {
-      "id": "c96c",
-      "firstName": "duha",
-      "lastName": "jilani",
-      "phone": "00-966-000-000-0000",
-      "file": "",
-      "physician": "",
       "urgently": "",
-      "total": 0
-    },
-    {
-      "id": "afd9",
-      "firstName": "duha",
-      "lastName": "jilani",
-      "phone": "00-966-000-000-0000",
-      "file": "",
-      "physician": "yes",
-      "urgently": "no",
-      "total": 100
-    },
-    {
-      "id": "807a",
-      "firstName": "duha",
-      "lastName": "jilani",
-      "phone": "00-966-000-000-0000",
-      "file": "",
-      "physician": "yes",
-      "urgently": "no",
-      "total": 100
-    },
-    {
-      "id": "b99d",
-      "firstName": "duha",
-      "lastName": "jilani",
-      "phone": "00-966-000-000-0000",
-      "file": "",
-      "physician": "yes",
-      "urgently": "yes",
-      "total": 150
-    },
-    {
-      "id": "872b",
-      "firstName": "dddd",
-      "lastName": "fdVF",
-      "phone": "00-966-000-000-0000",
-      "file": "",
-      "physician": "yes",
-      "urgently": "no",
-      "total": 100
+      "total": 701,
+      "flag": true
     }
   ]
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Reviews.css';
-import WriteFeedback from './WriteFeedback';
+
 import { useTranslation } from 'react-i18next';
 
 const Reviews = () => {
@@ -9,15 +9,7 @@ const Reviews = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const {t}=useTranslation();
 
-  // useEffect(() => {
-  //   axios.get("http://localhost:5004/feedbacks")
-  //     .then((response) => {
-  //       setItems(response.data);
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching data: ", error);
-  //     });
-  // }, []);
+ 
   const fetchFeedbacks = () => {
     axios.get("http://localhost:5004/feedbacks")
       .then((response) => {
@@ -55,7 +47,7 @@ const Reviews = () => {
         <div className='Boxes'>
           {items.slice(currentIndex, currentIndex + 3).map((feedback, index) => (
             <div className='BOX' key={feedback.id}>
-              <h3>{feedback.firstName} {feedback.lastName}</h3>
+              <h3>{feedback.fullname} </h3>
               <p>{feedback.feedback}</p>
             </div>
           ))}
@@ -64,7 +56,7 @@ const Reviews = () => {
         <button className='custom-button btn' onClick={handlePrev}>{t('Previous')}</button>
         <button className='custom-button btn' onClick={handleNext}>{t('Next')}</button></div>
       </div>
-      {/* <WriteFeedback refreshReviews={fetchFeedbacks} /> */}
+     
       
 
     </div>

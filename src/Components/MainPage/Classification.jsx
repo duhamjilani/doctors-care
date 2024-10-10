@@ -1,31 +1,26 @@
 import React, { useState, useEffect } from "react";
 import "./Dataflow.css";
 import { MdCloudUpload } from "react-icons/md";
-import samplePDF from "../../../src/duha_cv.pdf";
-import axios from "axios";
+
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
-import Swal from "sweetalert2";
+
+// Importing Phone Input
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css'; 
+
 const Classification = () => {
   const [phone, setPhone] = useState("");
-  const [showPDF, setShowPDF] = useState(false);
   const [file, setFile] = useState("");
-  const [firstName, setfirstName] = useState("");
-  const [lastName, setlastName] = useState("");
-
+  const [EMAIL, setEmail] = useState("");
+  const [fullName, setfullName] = useState("");
+  const flag=true;
   const [physician, setPhysician] = useState("");
   const [urgently, seturgently] = useState("");
   const [total, setTotal] = useState(0);
   const { t } = useTranslation();
   const navigate = useNavigate();
-
-
-  const phoneRegex = /^00-966-\d{3}-\d{3}-\d{4}$/;
-
-  const handlePhoneChange = (e) => {
-    setPhone(e.target.value);
-  };
 
   const handleFile = (e) => {
     setFile(e.target.files[0]);
@@ -42,14 +37,12 @@ const Classification = () => {
     let price = 0;
 
     if (physician === "yes") {
-      price += 100;
+      price =701;
     } else if (physician === "no") {
-      price += 50;
+      price =561;
     }
 
-    if (urgently === "yes") {
-      price += 50;
-    }
+   
 
     setTotal(price);
   };
@@ -57,83 +50,73 @@ const Classification = () => {
   useEffect(() => {
     calculateTotal();
   }, [physician, urgently]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!phoneRegex.test(phone)) {
-      alert("Please enter a valid phone number.");
-      return;
-    }
-    axios.post("http://localhost:5004/application", {
-      firstName,
-      lastName,
+
+    const formData = {
+      fullName,
+      EMAIL,
       phone,
       file,
       physician,
       urgently,
       total,
-    });
-    Swal.fire({
-      title: "Successfully Submitted",
-      text: "Thank You ",
-      icon: "success",
-      customClass: {
-        popup: "custom-popup",
-        title: "custom-title",
-        icon: "custom-icon",
-        confirmButton: "custom-button btn",
-      },
-    });
-    // refreshReviews();
-
-    navigate('/apply/dataflow/paypal', { state: { total:total } });
+      flag, 
+    };
+    
+   
+    
+  
+    navigate('/apply/dataflow/paypal', { state: { formData } });
   };
 
-  const handleTogglePDF = () => {
-    window.open(samplePDF, "_blank");
-  };
+ 
 
   return (
     <div className="BIG-CONTAINER">
       <h1>{t('title1')}</h1>
       <div className="Big-box2">
-        <form onSubmit={handleSubmit}>
-          <div className="field">
-            <label htmlFor="firstname">{t('firstName')}</label>
+        <form onSubmit={handleSubmit} method="post" enctype="multipart/form-data">
+        <div className="field">
+            <label htmlFor="FULL NAME">{t('FULL NAME')}</label>
             <input
               type="text"
-              placeholder="FIRST NAME"
-              name="firstname"
+              placeholder="FULL NAME"
+              name="FULL NAME"
               required
               onChange={(e) => {
-                setfirstName(e.target.value);
+                setfullName(e.target.value);
               }}
             />
           </div>
 
           <div className="field">
-            <label htmlFor="lastname">{t('lastName')}</label>
+            <label htmlFor="EMAIL">{t('Email')}</label>
             <input
-              type="text"
-              placeholder="LAST NAME"
-              name="lastname"
+              type="email"
+              placeholder="Email"
+              name="Email"
               onChange={(e) => {
-                setlastName(e.target.value);
+                setEmail(e.target.value);
               }}
               required
             />
           </div>
 
+         
           <div className="field">
             <label htmlFor="phone">{t('phoneNumber')}</label>
-            <input
-              type="text"
-              placeholder="00-966-000-000-0000"
-              name="phone"
+            <PhoneInput
+              country={"us"}
               value={phone}
-              onChange={handlePhoneChange}
-              required
-              pattern="^00-966-\d{3}-\d{3}-\d{4}$"
-              title="Please enter a phone number in the format 00-966-000-000-0000"
+              onChange={setPhone}
+              inputProps={{
+                name: "phone",
+                required: true,
+                autoFocus: true,
+                
+              }}
             />
           </div>
 
@@ -141,17 +124,11 @@ const Classification = () => {
             <div className="upload">
               <MdCloudUpload />
               <label className="custom-file-upload">
-              {t('chooseFile')}
+                {t('chooseFile')}
                 <input type="file" name="file1" onChange={handleFile} />
               </label>
             </div>
-            <button
-              type="button"
-              className="custom-button btn"
-              onClick={handleTogglePDF}
-            >
-              {t('showExample')}
-            </button>
+          
           </div>
 
           <div className="radio_buttons">
@@ -173,31 +150,13 @@ const Classification = () => {
             />
             <label htmlFor="no">{t('no')}</label>
           </div>
-          <div className="radio_buttons">
-            <label htmlFor="urgently">{t('urgently')}</label>
-            <input
-              type="radio"
-              value="yes"
-              name="urgently"
-              id="urgently-yes"
-              onChange={handleUrgentlyChange}
-            />
-            <label htmlFor="yes">{t('yes')}</label>
-            <input
-              type="radio"
-              value="no"
-              name="urgently"
-              id="urgently-no"
-              onChange={handleUrgentlyChange}
-            />
-            <label htmlFor="no">{t('no')}</label>
-          </div>
+       
           <div className="price">
             <label htmlFor="total">{t('total')}</label>
-            <input type="text" name="total" disabled value={total} />
+            <input type="text" name="total" disabled value={`${total}$`} />
           </div>
           <button className="custom-button btn" type="submit">
-          {t('submit')}
+            {t('submit')}
           </button>
         </form>
       </div>

@@ -1,47 +1,27 @@
-.Main{
-    height: 100vh;
-   
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.Main {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center;
+  padding: 0; /* Remove padding to reduce height */
+  margin: 0; /* Remove margin if there's any */
+  margin-top: 30px;
+  /* margin-bottom: 492px;
+  margin-top: 50px; */
 }
 
-.paypal-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* justify-content: center; */
-    padding: 20px;
-    background-color: #f7f9fc;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    margin: 50px auto;
-    height: 50vh;
-  }
-  
-  .paypal-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    /* color: #333; */
-    text-align: center;
-  }
-  
-  .paypal-box {
-    width: 100%;
-  }
-  
-  @media (max-width: 768px) {
-    .paypal-container {
-      padding: 15px;
-      max-width: 90%;
-    }
-  
-    .paypal-title {
-      font-size: 20px;
-    }
-  }
-  
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Allows elements to wrap and reduce height */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Vertically centers content */
+  width: 100%;
+  max-width: 600px; /* Control maximum width */
+  padding: 10px 0; /* Adjust padding as needed */
+}
+
+.paypal-box {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}

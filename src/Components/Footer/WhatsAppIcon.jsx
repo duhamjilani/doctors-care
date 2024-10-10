@@ -5,9 +5,10 @@ const WhatsAppIcon = () => {
   return (
     <div>
       <a
-        href="https://wa.me/+962799547115" // Replace with your WhatsApp number
-        target="_blank" // Opens the link in a new tab
-        rel="noopener noreferrer" // Prevents security vulnerabilities
+     
+        href="https://wa.me/+962796347206" 
+        target="_blank" 
+        rel="noopener noreferrer" 
       >
         <FaWhatsapp size={30} color="#133240" />
       </a>

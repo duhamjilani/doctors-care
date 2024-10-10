@@ -1,28 +1,26 @@
 import React, { useState, useEffect } from "react";
 import "./Dataflow.css";
 import { MdCloudUpload } from "react-icons/md";
-
 import { useTranslation } from 'react-i18next';
 import PhoneInput from 'react-phone-input-2';
-import 'react-phone-input-2/lib/style.css';  // Import phone input styles
+import 'react-phone-input-2/lib/style.css';  
 import { useNavigate } from 'react-router-dom';
 
-const Dataflow = () => {
+const Dataclass = () => {
   const [phone, setPhone] = useState("");
- 
   const [file, setFile] = useState("");
   const [EMAIL, setEmail] = useState("");
   const [fullName, setfullName] = useState("");
  
   const [physician, setPhysician] = useState("");
   const [urgently, seturgently] = useState("");
-  const [flag,setFlag]=useState(true)
+  const flag=true;
   const [total, setTotal] = useState(0);
   const { t } = useTranslation();
   const navigate = useNavigate();
 
   const handlePhoneChange = (value) => {
-    setPhone(value);  // Update the phone with country code
+    setPhone(value);  
   };
 
   const handleFile = (e) => {
@@ -41,16 +39,17 @@ const Dataflow = () => {
     let price = 0;
 
     if (physician === "yes") {
-      price =211;
+      price = 897;
     } else if (physician === "no") {
-      price = 169;
+      price =729;
     }
 
+    
     if (urgently === "yes" && physician==="yes") {
-      price =337;
+      price =1037;
     }
     if (urgently === "yes" && physician==="no") {
-      price =309;
+      price =869;
     }
 
     setTotal(price);
@@ -62,6 +61,7 @@ const Dataflow = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     const formData = {
       fullName,
       EMAIL,
@@ -77,21 +77,16 @@ const Dataflow = () => {
     
   
     navigate('/apply/dataflow/paypal', { state: { formData } });
-
-
-
-
-
   };
-  // total:total
-  
+
+ 
 
   return (
     <div className="BIG-CONTAINER">
-      <h1>{t('title')}</h1>
+      <h1>{t('title2')}</h1>
       <div className="Big-box2">
-        <form onSubmit={handleSubmit} method="post" enctype="multipart/form-data">
-          <div className="field">
+        <form onSubmit={handleSubmit} method="post" enctype="multipart/form-data" >
+        <div className="field">
             <label htmlFor="FULL NAME">{t('FULL NAME')}</label>
             <input
               type="text"
@@ -139,7 +134,7 @@ const Dataflow = () => {
                 <input type="file" name="file1" onChange={handleFile} />
               </label>
             </div>
-          
+           
           </div>
 
           <div className="radio_buttons">
@@ -182,6 +177,7 @@ const Dataflow = () => {
             <label htmlFor="no">{t('no')}</label>
           </div>
           <p className="note"> {t('note')}</p>
+
           <div className="price">
             <label htmlFor="total">{t('total')}</label>
             <input type="text" name="total" disabled value={`${total}$`} />
@@ -213,5 +209,6 @@ const Dataflow = () => {
   );
 };
 
-export default Dataflow;
+export default Dataclass;
+
 

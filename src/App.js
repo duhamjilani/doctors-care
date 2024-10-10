@@ -1,8 +1,10 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 import "./App.css";
 import Footer from "./Components/Footer/Footer";
 import Apply from "./Components/MainPage/Apply";
 import Classification from "./Components/MainPage/Classification";
 import ContactUs from "./Components/MainPage/ContactUs";
+import Dataclass from "./Components/MainPage/Dataclass";
 import Dataflow from "./Components/MainPage/Dataflow";
 import Hero from "./Components/MainPage/Hero";
 import PayPalIntegration from "./Components/MainPage/Paypal";
@@ -24,19 +26,23 @@ export const scroll = new SmoothScroll('a[href*="#"]', {
 function App() {
   return (
     <>
-     
-       
-     
-      <Router>
-      <Navbar />
-        <Routes>
-          <Route path="/" element={<Hero />} />
-          <Route path="/apply/dataflow" element={<Dataflow />} />
-          <Route path="/apply/classification" element={<Classification />} />
-          <Route path="/apply/dataflow/paypal" element={<PayPalIntegration />} />
-        </Routes>
-        <Footer />
-      </Router>
+      <div className="main-container">
+        <Router>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Hero />} />
+            <Route path="/apply/dataflow" element={<Dataflow />} />
+            <Route path="/apply/classification" element={<Classification />} />
+
+            <Route path="/apply/dataclass" element={<Dataclass />} />
+            <Route
+              path="/apply/dataflow/paypal"
+              element={<PayPalIntegration />}
+            />
+          </Routes>
+          <Footer />
+        </Router>
+      </div>
 
       {/* <Router>
      
@@ -47,8 +53,6 @@ function App() {
         </Routes>
       
       </Router> */}
-     
-     
     </>
   );
 }

@@ -1,18 +1,21 @@
 {
     "title": "Data Flow",
-    "title1":"Data Flow & Classification",
-    "firstName": "First Name",
+    "title1":" Classification",
+    "title2":"Data Flow & Classification",
+
+    "FULL NAME": "Full Name",
     "lastName": "Last Name",
     "phoneNumber": "Phone Number",
     "physician": "PHYSICIAN",
-    "urgently": "URGENTLY",
+    "urgently": "URGENTLY ",
+    "note":" URGENTLY:(**will be completed within two weeks)",
     "total": "TOTAL",
     "submit": "Submit",
     "fileMustContain": "FILE MUST CONTAIN",
-    "passport": "Passport",
+    "passport": "Clear Copy Passport",
     "degree": "Degree",
-    "professionalPractice": "Professional practice certificate",
-    "markSheet": "Mark sheet",
+    "professionalPractice": "Clear Copy  Certificate",
+    "markSheet": "Mark Sheet",
     "showExample":"show exemple",
     "chooseFile":"choose file",
     "dataFlowReport":"Data Flow Report",
@@ -22,7 +25,15 @@
   "REVIEWS": "REVIEWS",
   "CONTACT US": "CONTACT US",
   "LANGUAGE": "LANGUAGE",
-  "about us para":"We are a team dedicated to providing innovative and high-quality solutions to meet our clients' needs. We consistently strive for excellence by adhering to the highest standards of professionalism and creativity.",
+  
+    "about us para": "We are a company specializing in providing assistance with DataFlow reports and health classification for the Saudi Commission for Health Specialties, as well as scheduling Prometric exams. We support our clients every step of the way, offering continuous follow-up until they receive their DataFlow report and classification certificate.\n\nWith expertise in classification and DataFlow reports since 2012, we ensure a smooth process for our clients. There's no need to worry about the classification steps or the DataFlow report; simply share the required documents, and we will handle all transactions with speed and precision.\nOur goal is to make this process efficient for you. We wish everyone success and good luck.",
+  
+  
+
+
+
+
+
   "review_sentence":"Don’t take our word for it. Trust our customers"
 
 

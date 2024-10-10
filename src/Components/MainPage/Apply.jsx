@@ -45,6 +45,25 @@ const Apply = () => {
           <div className='layer1'>
             <div className="button-container">
               <Link to='/apply/Classification' className="custom-button">
+              {t('CLASSIFICATION')}
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div
+          className="box1"
+          style={{
+            backgroundImage: `url(${file})`,
+            height: "50vh", 
+            width: "40vw",   
+            backgroundSize: "cover",    
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat", 
+          }}
+        >
+          <div className='layer1'>
+            <div className="button-container">
+              <Link to='/apply/Dataclass' className="custom-button">
               {t('DATA FLOW & CLASSIFICATION')}
               </Link>
             </div>

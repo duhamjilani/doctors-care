@@ -39,6 +39,38 @@
     border-radius: 5px;
 }
 
+
+.react-tel-input {
+    width: 100%; 
+    display: flex;
+    align-items: center;
+}
+
+.react-tel-input input {
+    width: 100%; /* Ensures the input field is fully responsive */
+    padding: 10px; /* Matches the padding with other input fields */
+    font-size: 16px; /* Consistent font size */
+    border: 1px solid #ccc; /* Consistent border style */
+    border-radius: 5px; /* Consistent border radius */
+    box-sizing: border-box;
+    text-align: center; /* Ensures padding is accounted for in the width */
+}
+
+.react-tel-input .flag-dropdown {
+    border: 1px solid #ccc; /* Consistent border style */
+    border-radius: 5px 0 0 5px; /* Border radius on the left */
+}
+
+.react-tel-input .selected-flag {
+    padding: 10px; /* Ensures the dropdown icon is vertically aligned */
+    background-color: #f9f9f9; /* Matches the background color */
+}
+
+.react-tel-input input:focus {
+    border-color: #52B9C4; /* Highlight border on focus */
+    outline: none; /* Remove default focus outline */
+}
+
 .file {
     display: flex;
     flex-direction: column;
@@ -68,8 +100,7 @@
     display: inline-block;
     padding: 10px 20px;
     cursor: pointer;
-    /* background-color: #52B9C4; */
-    color:#8D8D8D;
+    color: #8D8D8D;
     border-radius: 5px;
     font-size: 16px;
     text-align: center;
@@ -132,38 +163,44 @@ input[type="radio"]:checked::before {
     display: block;
     text-align: center;
 }
-.price{
+.note{
+    color:red;
+}
+
+.price {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap:20px
+    gap: 20px;
 }
-.price input{
+
+.price input {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 16px;
     padding: 4px;
 }
+
 .contain {
     margin-top: 20px;
     width: 100%;
     max-width: 800px;
-  }
-  
-  .contain h3 {
+}
+
+.contain h3 {
     color: red;
     text-align: center;
     margin-bottom: 20px;
-  }
-  
-  .bigOne {
+}
+
+.bigOne {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
-  }
-  
-  .box3 {
+}
+
+.box3 {
     flex: 1 1 calc(50% - 20px);
     min-width: 150px;
     background-color: rgba(39, 144, 195, 0.68);
@@ -171,11 +208,11 @@ input[type="radio"]:checked::before {
     border-radius: 8px;
     text-align: center;
     box-sizing: border-box;
-  }
-  
-  .box3.green {
+}
+
+.box3.green {
     background-color: rgba(13, 140, 96, 0.39);
-  }
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -206,6 +243,10 @@ input[type="radio"]:checked::before {
         font-size: 14px;
         padding: 8px 16px;
     }
+
+    .react-tel-input input {
+        font-size: 14px; /* Slightly reduce font size on smaller screens */
+    }
 }
 
 @media (max-width: 480px) {
@@ -222,5 +263,9 @@ input[type="radio"]:checked::before {
         font-size: 12px;
         padding: 6px 12px;
     }
-}
 
+    .react-tel-input input {
+        font-size: 12px; /* Further reduce font size on mobile screens */
+        padding: 8px; /* Adjust padding for smaller screens */
+    }
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import "./WriteFeedback.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from 'axios'
 import Swal from 'sweetalert2'
 import { useTranslation } from 'react-i18next';
@@ -9,8 +9,8 @@ import { useTranslation } from 'react-i18next';
 
 
 const WriteFeedback = ({refreshReviews}) => {
-  const [firstName, setfirstName] = useState("");
-  const [lastName, setlastName] = useState("");
+  const [fullName, setfullName] = useState("");
+ 
   const [feedback, setfeedback] = useState("");
   const{t}=useTranslation();
   
@@ -18,10 +18,22 @@ const WriteFeedback = ({refreshReviews}) => {
  
   let FormSubmit=(e)=>{
     e.preventDefault();
+    if (!fullName || !feedback) {
+     
+      Swal.fire({
+        title: "Incomplete Form",
+        text: "Please fill in all required fields.",
+        icon: "error",
+      });
+      return; 
+    }
+
+
+
     axios.post("http://localhost:5004/feedbacks", {
      
-      firstName,
-      lastName,
+      fullName,
+      
       feedback,
     });
     Swal.fire({
@@ -35,7 +47,7 @@ const WriteFeedback = ({refreshReviews}) => {
         confirmButton: 'custom-button btn',
       }
     });
-    // refreshReviews();
+   
    
   }
   return (
@@ -46,32 +58,20 @@ const WriteFeedback = ({refreshReviews}) => {
           <div>
             <form>
               <div className="field">
-                <label htmlFor="firstname"> {t('firstName')}</label>
+                <label htmlFor="FULL NAME"> {t('FULL NAME')}</label>
                 <input
                   type="text"
-                  placeholder="FIRST NAME"
-                  name="firstname"
+                  placeholder="FULL NAME"
+                  name="FULL NAME"
                   onChange={(e) => {
-                    setfirstName(e.target.value);
+                    setfullName(e.target.value);
                     
                   }}
                   required
                 />
               </div>
 
-              <div className="field">
-                {" "}
-                <label htmlFor="lastname"> {t('lastName')}</label>
-                <input
-                  type="text"
-                  placeholder="LAST NAME"
-                  name="lastname"
-                  onChange={(e) => {
-                    setlastName(e.target.value);
-                  }}
-                  required
-                />
-              </div>
+             
 
               <div className="field">
                 <label htmlFor="opinion"> {t('Tell Us What You Think')}</label>

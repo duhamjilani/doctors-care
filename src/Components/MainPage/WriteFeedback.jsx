@@ -11,14 +11,14 @@ import { useTranslation } from 'react-i18next';
 const WriteFeedback = ({refreshReviews}) => {
   const [fullName, setfullName] = useState("");
  
-  const [feedback, setfeedback] = useState("");
+  const [feedbackdesc, setfeedback] = useState("");
   const{t}=useTranslation();
   
  
  
   let FormSubmit=(e)=>{
     e.preventDefault();
-    if (!fullName || !feedback) {
+    if (!fullName || !feedbackdesc) {
      
       Swal.fire({
         title: "Incomplete Form",
@@ -30,11 +30,11 @@ const WriteFeedback = ({refreshReviews}) => {
 
 
 
-    axios.post("http://localhost:5004/feedbacks", {
+    axios.post("http://doctorcareapi-env.eba-xzm3dewh.us-east-1.elasticbeanstalk.com/Feedback/AddFeedback", {
      
       fullName,
       
-      feedback,
+      feedbackdesc,
     });
     Swal.fire({
       title: "Successfully Submitted",

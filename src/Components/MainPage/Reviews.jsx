@@ -11,12 +11,14 @@ const Reviews = () => {
 
  
   const fetchFeedbacks = () => {
-    axios.get("http://localhost:5004/feedbacks")
+    axios.get("http://doctorcareapi-env.eba-xzm3dewh.us-east-1.elasticbeanstalk.com/Feedback/GetAllFeedbacks")
       .then((response) => {
-        setItems(response.data);
+        setItems(response.data.results);
+        
       })
       .catch((error) => {
         console.error("Error fetching data: ", error);
+        alert("something went wrong");
       });
   };
 
@@ -45,10 +47,10 @@ const Reviews = () => {
        
         
         <div className='Boxes'>
-          {items.slice(currentIndex, currentIndex + 3).map((feedback, index) => (
-            <div className='BOX' key={feedback.id}>
-              <h3>{feedback.fullname} </h3>
-              <p>{feedback.feedback}</p>
+          {items?.slice(currentIndex, currentIndex + 3).map((items, index) => (
+            <div className='BOX' key={items.id}>
+              <h3>{items.fullname} </h3>
+              <p>{items.feedbackdesc}</p>
             </div>
           ))}
         </div>

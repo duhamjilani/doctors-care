@@ -1,24 +1,27 @@
 
-.layer{
+.layer {
     background-color: rgba(240, 244, 247, 0.69);
     min-height: 90vh;
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* This makes the content stack vertically */
     justify-content: center;
     align-items: center;
-   
-    gap:20px;
+    gap: 20px; /* Adds space between the heading and paragraph */
+    padding: 0 20px; /* Ensures padding around the content */
 }
-.layer h1{
+
+.layer h1 {
     font-size: 50px;
     font-weight: 600;
+    text-align: center; /* Centers the About Us title */
 }
-.layer p{
+
+.layer p {
     text-align: center;
     font-weight: 600;
     font-size: 20px;
     line-height: 1.8;
-
+    max-width: 800px; /* Limits paragraph width so it wraps neatly */
 }
 
 @media (max-width: 768px) {

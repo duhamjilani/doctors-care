@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ReactAspApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+05acabaadd6c9b179fc52f7458e91089cc4445f4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f353e886b02bd517a39e4d9430d3474cc6489841")]
 [assembly: System.Reflection.AssemblyProductAttribute("ReactAspApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ReactAspApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

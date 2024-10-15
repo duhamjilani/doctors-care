@@ -4,66 +4,86 @@ import { MdCloudUpload } from "react-icons/md";
 
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-
+import Swal from "sweetalert2";
 
 // Importing Phone Input
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css'; 
 
 const Classification = () => {
-  const [phone, setPhone] = useState("");
-  const [file, setFile] = useState("");
-  const [EMAIL, setEmail] = useState("");
-  const [fullName, setfullName] = useState("");
-  const flag=true;
-  const [physician, setPhysician] = useState("");
-  const [urgently, seturgently] = useState("");
-  const [total, setTotal] = useState(0);
+  const [PhoneNumber, setPhoneNumber] = useState("");
+ 
+  const [FileInfo, setFileInfo] = useState("");
+  const [ ReceiverEmail, setReceiverEmail] = useState("");
+  const [FullName, setFullName] = useState("");
+ 
+  const [IsPhysician, setIsPhysician] = useState("");
+  const [IsUrgent, setIsUrgent] = useState(false);
+  const [IsPaid,setIsPaid]=useState(true)
+  const [TotalPrice, setTotalPrice] = useState(0);
   const { t } = useTranslation();
   const navigate = useNavigate();
 
   const handleFile = (e) => {
-    setFile(e.target.files[0]);
+    setFileInfo(e.target.files[0]);
   };
 
   const handlePhysicianChange = (e) => {
-    setPhysician(e.target.value);
+    setIsPhysician(e.target.value);
   };
   const handleUrgentlyChange = (e) => {
-    seturgently(e.target.value);
+    setIsUrgent(e.target.value);
   };
 
   const calculateTotal = () => {
     let price = 0;
 
-    if (physician === "yes") {
+    if (IsPhysician === "yes") {
       price =701;
-    } else if (physician === "no") {
+    } else if (IsPhysician === "no") {
       price =561;
     }
 
    
 
-    setTotal(price);
+    setTotalPrice(price);
   };
 
   useEffect(() => {
     calculateTotal();
-  }, [physician, urgently]);
+  }, [IsPhysician, IsUrgent]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const formData = {
-      fullName,
-      EMAIL,
-      phone,
-      file,
-      physician,
-      urgently,
-      total,
-      flag, 
-    };
+    if (!FullName || !PhoneNumber || !ReceiverEmail || !FileInfo) {
+      Swal.fire({
+        title: "Incomplete Form",
+        text: "Please fill in all required fields",
+        icon: "error",
+      });
+      return; 
+    }
+      
+      const formData = {
+       
+        
+      
+       
+       
+       
+       
+        
+  
+        FullName,
+        PhoneNumber,
+        ReceiverEmail,
+        IsPhysician,
+        IsUrgent,
+        IsPaid,
+        FileInfo,
+        TotalPrice
+      };
     
    
     
@@ -86,7 +106,7 @@ const Classification = () => {
               name="FULL NAME"
               required
               onChange={(e) => {
-                setfullName(e.target.value);
+                setFullName(e.target.value);
               }}
             />
           </div>
@@ -98,7 +118,7 @@ const Classification = () => {
               placeholder="Email"
               name="Email"
               onChange={(e) => {
-                setEmail(e.target.value);
+                setReceiverEmail(e.target.value);
               }}
               required
             />
@@ -109,8 +129,8 @@ const Classification = () => {
             <label htmlFor="phone">{t('phoneNumber')}</label>
             <PhoneInput
               country={"us"}
-              value={phone}
-              onChange={setPhone}
+              value={PhoneNumber}
+              onChange={setPhoneNumber}
               inputProps={{
                 name: "phone",
                 required: true,
@@ -153,7 +173,7 @@ const Classification = () => {
        
           <div className="price">
             <label htmlFor="total">{t('total')}</label>
-            <input type="text" name="total" disabled value={`${total}$`} />
+            <input type="text" name="total" disabled value={`${TotalPrice}$`} />
           </div>
           <button className="custom-button btn" type="submit">
             {t('submit')}

@@ -4,73 +4,95 @@ import { MdCloudUpload } from "react-icons/md";
 
 import { useTranslation } from 'react-i18next';
 import PhoneInput from 'react-phone-input-2';
-import 'react-phone-input-2/lib/style.css';  // Import phone input styles
+import 'react-phone-input-2/lib/style.css';  
 import { useNavigate } from 'react-router-dom';
+import Swal from "sweetalert2";
 
 const Dataflow = () => {
-  const [phone, setPhone] = useState("");
+  const [PhoneNumber, setPhoneNumber] = useState("");
  
-  const [file, setFile] = useState("");
-  const [EMAIL, setEmail] = useState("");
-  const [fullName, setfullName] = useState("");
+  const [FileInfo, setFileInfo] = useState("");
+  const [ ReceiverEmail, setReceiverEmail] = useState("");
+  const [FullName, setFullName] = useState("");
  
-  const [physician, setPhysician] = useState("");
-  const [urgently, seturgently] = useState("");
-  const [flag,setFlag]=useState(true)
-  const [total, setTotal] = useState(0);
+  const [IsPhysician, setIsPhysician] = useState("");
+  const [IsUrgent, setIsUrgent] = useState();
+  const [IsPaid,setIsPaid]=useState(true)
+  const [TotalPrice, setTotalPrice] = useState(0);
   const { t } = useTranslation();
   const navigate = useNavigate();
 
   const handlePhoneChange = (value) => {
-    setPhone(value);  // Update the phone with country code
+    setPhoneNumber(value);  // Update the phone with country code
   };
 
   const handleFile = (e) => {
-    setFile(e.target.files[0]);
+    setFileInfo(e.target.files[0]);
   };
 
   const handlePhysicianChange = (e) => {
-    setPhysician(e.target.value);
+    setIsPhysician(e.target.value);
   };
 
   const handleUrgentlyChange = (e) => {
-    seturgently(e.target.value);
+    setIsUrgent(JSON.parse(e.target.value));
   };
 
   const calculateTotal = () => {
     let price = 0;
 
-    if (physician === "yes") {
+    if (IsPhysician === "yes") {
       price =211;
-    } else if (physician === "no") {
+    } else if (IsPhysician === "no") {
       price = 169;
     }
 
-    if (urgently === "yes" && physician==="yes") {
+    if (IsUrgent ===true && IsPhysician==="yes") {
       price =337;
     }
-    if (urgently === "yes" && physician==="no") {
+    if (IsUrgent === true && IsPhysician==="no") {
       price =309;
     }
 
-    setTotal(price);
+    setTotalPrice(price);
   };
 
   useEffect(() => {
     calculateTotal();
-  }, [physician, urgently]);
+  }, [IsPhysician,IsUrgent]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
+  
+  
+ 
+  if (!FullName || !PhoneNumber || !ReceiverEmail || !FileInfo) {
+    Swal.fire({
+      title: "Incomplete Form",
+      text: "Please fill in all required fields",
+      icon: "error",
+    });
+    return; 
+  }
+    
     const formData = {
-      fullName,
-      EMAIL,
-      phone,
-      file,
-      physician,
-      urgently,
-      total,
-      flag, 
+     
+      
+    
+     
+     
+     
+     
+      
+
+      FullName,
+      PhoneNumber,
+      ReceiverEmail,
+      IsPhysician,
+      IsUrgent,
+      IsPaid,
+      FileInfo,
+      TotalPrice
     };
     
    
@@ -90,7 +112,7 @@ const Dataflow = () => {
     <div className="BIG-CONTAINER">
       <h1>{t('title')}</h1>
       <div className="Big-box2">
-        <form onSubmit={handleSubmit} method="post" enctype="multipart/form-data">
+        <form onSubmit={handleSubmit} method="post" encType="multipart/form-data">
           <div className="field">
             <label htmlFor="FULL NAME">{t('FULL NAME')}</label>
             <input
@@ -99,7 +121,7 @@ const Dataflow = () => {
               name="FULL NAME"
               required
               onChange={(e) => {
-                setfullName(e.target.value);
+                setFullName(e.target.value);
               }}
             />
           </div>
@@ -111,7 +133,7 @@ const Dataflow = () => {
               placeholder="Email"
               name="Email"
               onChange={(e) => {
-                setEmail(e.target.value);
+                setReceiverEmail(e.target.value);
               }}
               required
             />
@@ -121,7 +143,7 @@ const Dataflow = () => {
             <label htmlFor="phone">{t('phoneNumber')}</label>
             <PhoneInput
               country={'us'}  // Default country
-              value={phone}
+              value={PhoneNumber}
               onChange={handlePhoneChange}
               inputProps={{
                 name: 'phone',
@@ -136,7 +158,7 @@ const Dataflow = () => {
               <MdCloudUpload />
               <label className="custom-file-upload">
                 {t('chooseFile')}
-                <input type="file" name="file1" onChange={handleFile} />
+                <input type="file" name="file1" onChange={handleFile}   />
               </label>
             </div>
           
@@ -166,7 +188,7 @@ const Dataflow = () => {
             <label htmlFor="urgently">{t('urgently')}</label>
             <input
               type="radio"
-              value="yes"
+              value='true'
               name="urgently"
               id="urgently-yes"
               onChange={handleUrgentlyChange}
@@ -174,7 +196,7 @@ const Dataflow = () => {
             <label htmlFor="yes">{t('yes')}</label>
             <input
               type="radio"
-              value="no"
+              value='false'
               name="urgently"
               id="urgently-no"
               onChange={handleUrgentlyChange}
@@ -184,7 +206,7 @@ const Dataflow = () => {
           <p className="note"> {t('note')}</p>
           <div className="price">
             <label htmlFor="total">{t('total')}</label>
-            <input type="text" name="total" disabled value={`${total}$`} />
+            <input type="text" name="total" disabled value={`${TotalPrice}$`} />
           </div>
           <button className="custom-button btn" type="submit">
             {t('submit')}

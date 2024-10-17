@@ -1,25 +1,28 @@
 .Navbar {
   width: 100%;
   background-color: rgba(13, 140, 96, 0.39);
-  height: 9vh;
+  height: 12vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
   position: sticky;
   top: 0;
-  z-index: 999;
+  /* z-index: 999; */
   box-sizing: border-box;
 }
 
 
-
-
-.logo3 {
-  object-fit: cover;
-  height: 90%;
-  width: 100px;
+.logo{
+  height: 15vh;
+  width: 13vw;
 }
+
+ .logo3 {
+   /* object-fit: cover;  */
+   height: 15vh;
+   width: 10vw
+} 
 
 
 .center {
@@ -132,6 +135,11 @@ ul li a:hover {
   .dropdown-menu li {
     padding: 10px;
   }
+  .logo3 {
+   
+    height: 15vh;
+    width: 13vw;
+}
 }
 
 @media (min-width: 769px) {

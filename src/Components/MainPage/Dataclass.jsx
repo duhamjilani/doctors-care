@@ -174,7 +174,7 @@ const Dataclass = () => {
             <label htmlFor="urgently">{t('urgently')}</label>
             <input
               type="radio"
-              value="yes"
+              value="true"
               name="urgently"
               id="urgently-yes"
               onChange={handleUrgentlyChange}
@@ -182,7 +182,7 @@ const Dataclass = () => {
             <label htmlFor="yes">{t('yes')}</label>
             <input
               type="radio"
-              value="no"
+              value="false"
               name="urgently"
               id="urgently-no"
               onChange={handleUrgentlyChange}

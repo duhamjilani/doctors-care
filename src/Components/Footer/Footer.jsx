@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.css";
-import logo1 from "../../Pictures/logo1.png";
+import logo8 from "../../Pictures/logo8.png";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 const Footer = () => {
@@ -8,7 +8,7 @@ const Footer = () => {
     <div>
       <footer className="footer" id="contactus">
         <div className="logo">
-          <img src={logo1} alt="logo" className="logo3" />
+          <img src={logo8} alt="logo" className="logo3" />
         </div>
         <div className="footer_center"> 
         <h4> &copy; 2024 All Rights Reserved Doctors Care </h4>

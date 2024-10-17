@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./navbar.css";
-import logo1 from "../../Pictures/logo1.png";
+import logo8 from "../../Pictures/logo8.png";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -26,7 +26,7 @@ const Navbar = () => {
     <div>
       <nav className="Navbar">
         <div className="logo">
-          <img src={logo1} alt="logo" className="logo3" />
+          <img src={logo8} alt="logo" className="logo3" />
         </div>
         <div className={`center ${isMenuOpen ? "active" : ""}`}>
           <ul>

@@ -204,6 +204,7 @@ const Dataflow = () => {
             <label htmlFor="no">{t('no')}</label>
           </div>
           <p className="note"> {t('note')}</p>
+          <p className="note"> {t('note2')}</p>
           <div className="price">
             <label htmlFor="total">{t('total')}</label>
             <input type="text" name="total" disabled value={`${TotalPrice}$`} />
